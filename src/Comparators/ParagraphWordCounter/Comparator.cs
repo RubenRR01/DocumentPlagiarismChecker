@@ -63,9 +63,12 @@ namespace DocumentPlagiarismChecker.Comparators.ParagraphWordCounter
         /// <summary>
         /// Compares the sample with the given file and exclude the paragraphs that produces a false positive match between the sample an the document.
         /// </summary>
+
+        //Comentario del método ExcludeSampleMatches 
         private void ExcludeSampleExactMatches(){
             if(this.Sample == null) return;
 
+        //Este código se encarga de eliminar todos los párrafos contenidos en un diccionario de párrafos llamado Sample.Paragraphs de dos diccionarios distintos llamados Left.Paragraphs y Right.Paragraphs.
             foreach(string paragraph in this.Sample.Paragraphs.Select(x => x.Key)){
                 this.Left.Paragraphs.Remove(paragraph);   
                 this.Right.Paragraphs.Remove(paragraph);   
